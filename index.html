@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Base Camp Penjelajahan</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    width:90%;
+    max-width:600px;
+}
+
+.page{
+    display:none;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+
+.page.active{
+    display:block;
+}
+
+h1{
+    color:#2c3e50;
+}
+
+button{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    background:#2c3e50;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    opacity:0.9;
+}
+
+ul{
+    padding-left:20px;
+}
+
+.quote{
+    margin-top:20px;
+    font-style:italic;
+    color:#666;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- PAGE 1 -->
+    <div class="page active">
+        <h1>📜 Penjelajahan Pelantikan Penegak</h1>
+        <p>
+            Selamat datang, Penjelajah.
+        </p>
+
+        <p>
+            Hari ini kalian akan menempuh sebuah perjalanan yang menuntut
+            kerja sama, ketelitian, dan kemampuan berpikir sebagai seorang
+            Pramuka Penegak.
+        </p>
+
+        <p>
+            Setiap tantangan memiliki tujuan, setiap langkah memiliki makna.
+        </p>
+
+        <button onclick="nextPage()">Mulai</button>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div class="page">
+        <h1>⚠️ Perhatikan Sebelum Berangkat</h1>
+
+        <ul>
+            <li>Tetap bersama regu selama perjalanan.</li>
+            <li>Hormati penjaga pos dan peserta lain.</li>
+            <li>Jaga kebersihan lingkungan.</li>
+            <li>Utamakan keselamatan.</li>
+            <li>Selesaikan setiap tantangan dengan jujur.</li>
+        </ul>
+
+        <button onclick="nextPage()">Saya Mengerti</button>
+    </div>
+
+    <!-- PAGE 3 -->
+    <div class="page">
+        <h1>🎯 Misi Hari Ini</h1>
+
+        <p>
+            Dalam perjalanan ini kalian akan menemukan berbagai tantangan
+            yang menguji kemampuan regu.
+        </p>
+
+        <p>
+            Jangan terburu-buru mencari jawaban.
+            Amati keadaan.
+            Diskusikan bersama.
+            Ambil keputusan terbaik.
+        </p>
+
+        <p>
+            Keberhasilan sebuah regu tidak ditentukan oleh satu orang,
+            melainkan oleh seluruh anggotanya.
+        </p>
+
+        <button onclick="nextPage()">Terima Petunjuk</button>
+    </div>
+
+    <!-- PAGE 4 -->
+    <div class="page">
+        <h1>🧭 Petunjuk Pos 1</h1>
+
+        <p>
+            Carilah titik paling jauh yang dapat dicapai tanpa meninggalkan
+            jalan yang ada.
+        </p>
+
+        <p>
+            Petunjuk pertama menunggu di sana.
+        </p>
+
+        <div class="quote">
+            Semoga perjalanan kalian berjalan lancar.
+        </div>
+
+        <button onclick="startMission()">Mulai Perjalanan</button>
+    </div>
+
+</div>
+
+<script>
+let currentPage = 0;
+const pages = document.querySelectorAll(".page");
+
+function nextPage(){
+    pages[currentPage].classList.remove("active");
+    currentPage++;
+    pages[currentPage].classList.add("active");
+}
+
+function startMission(){
+    alert("Misi dimulai! Silakan menuju Pos 1.");
+    // Ganti link di bawah dengan URL QR Pos 1 jika diperlukan
+    // window.location.href = "pos1.html";
+}
+</script>
+
+</body>
+</html>
